@@ -47,7 +47,7 @@ namespace TextEngine_BBCode
             //Color, Font ile kapatılabilir.
             evulator.SetAlias("color", "font");
             //Size, Font ile kapatılabilir.
-            evulator.SetAlias("size", ",font");
+            evulator.SetAlias("size", "font");
         }
 
         private void btnConvert_Click(object sender, EventArgs e)
