@@ -32,14 +32,14 @@ namespace TextEngine_BBCode
         }
         public BBCodeInfo SetCustomEvulator(Type customBBEvulator)
         {
-            this.CustomEvultor = customBBEvulator;
+            this.CustomEvulator = customBBEvulator;
             return this;
         }
         /// <summary>
         /// Etkin olup olmadığınıbelirler
         /// </summary>
         public bool Enabled { get; set; }
-        public Type CustomEvultor { get; set; }
+        public Type CustomEvulator { get; set; }
         public BBCodeInfoFlags Flags { get; set; }
         public Action<BBCodeValidator, TextEngine.Text.TextElement> Validator { get; set; }
 

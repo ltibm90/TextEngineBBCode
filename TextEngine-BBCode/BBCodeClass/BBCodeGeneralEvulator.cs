@@ -35,9 +35,9 @@ namespace TextEngine_BBCode
             };
             var dict = this.GetDictionary(tag);
             currentInfo = this.bbCodeEvulator.GetTag(tag.ElemName);
-            if (currentInfo.CustomEvultor != null)
+            if (currentInfo.CustomEvulator != null)
             {
-                customEvulatorHandler = Activator.CreateInstance(currentInfo.CustomEvultor) as BaseEvulator;
+                customEvulatorHandler = Activator.CreateInstance(currentInfo.CustomEvulator) as BaseEvulator;
                 customEvulatorHandler.SetEvulator(this.Evulator);
                 result = customEvulatorHandler.Render(tag, vars);
 
