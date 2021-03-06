@@ -50,6 +50,8 @@ namespace TextEngine_BBCode
             evulator.LeftTag = '[';
             evulator.RightTag = ']';
             evulator.SurpressError = true;
+            evulator.AllowCharMap = true;
+     
 
         }
         /// <summary>
