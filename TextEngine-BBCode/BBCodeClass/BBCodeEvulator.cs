@@ -39,6 +39,7 @@ namespace TextEngine_BBCode
             evulator = new TextEvulator();
             //Mevcut evulatör tipleri ve tag ayarlamaları silindi.
             evulator.EvulatorTypes.Clear();
+            evulator.EvulatorTypes.Param = null;
             evulator.TagInfos.Clear();
             //Mevcut sınıfımız evulator ile birlikte gönderildi.
             evulator.CustomDataSingle = this;
