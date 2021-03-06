@@ -46,7 +46,7 @@ namespace TextEngine_BBCode
                 result = customEvulatorHandler.Render(tag, vars);
 
             }
-            else if ((currentInfo.Flags & BBCodeInfoFlags.InnerTextOnly) != 0 && currentInfo.Enabled)
+            else if ((currentInfo.Flags & BBCodeInfoFlags.InnerTextOnly) != 0 && currentInfo.Enabled && !tag.AutoClosed)
             {
                 dict["Text"] = tag.InnerText();
                 var validateResult = currentInfo.Validate(dict, tag);
@@ -94,7 +94,16 @@ namespace TextEngine_BBCode
             else
             {
                 //default 
-                latestResult.TextContent = "[" + tag.ElemName + "]" + latestResult.TextContent + "[/" + tag.ElemName + "]";
+                if(tag.AutoClosed)
+                {
+                 
+                    latestResult.TextContent = "[" + tag.ElemName + "]";
+                }
+                else
+                {
+                    latestResult.TextContent = "[" + tag.ElemName + "]" + latestResult.TextContent + "[/" + tag.ElemName + "]";
+                }
+               
             }
             base.RenderFinish(tag, vars, latestResult);
         }

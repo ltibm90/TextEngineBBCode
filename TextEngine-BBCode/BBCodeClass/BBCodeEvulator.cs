@@ -50,6 +50,7 @@ namespace TextEngine_BBCode
             evulator.LeftTag = '[';
             evulator.RightTag = ']';
             evulator.SurpressError = true;
+
         }
         /// <summary>
         /// BBKodu belirtilen formata göre değerlendirir.
@@ -86,6 +87,15 @@ namespace TextEngine_BBCode
             this.BBCodes.TryGetValue("*", out info);
             return info;
 
+        }
+
+        public void SetAutoClosed(string tagname)
+        {
+            this.evulator.TagInfos[tagname].Flags |= TextElementFlags.TEF_AutoClosedTag;
+        }
+        public void SetMap(char cur, string target)
+        {
+            this.evulator.CharMap[cur] = target;
         }
     }
 }

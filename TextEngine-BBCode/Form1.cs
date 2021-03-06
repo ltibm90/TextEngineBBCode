@@ -44,6 +44,12 @@ namespace TextEngine_BBCode
             evulator.SetTag("color", new BBCodeInfo("<font color=\"{%TagAttrib}\">{%Text}</font>"));
             evulator.SetTag("font", new BBCodeInfo("<font face=\"{%TagAttrib}\">{%Text}</font>"));
             evulator.SetTag("center", new BBCodeInfo().SetCustomEvulator(typeof(CustomBBEvulator)));
+            //satır karakterinin yanına otomatik <br /> eklenir
+            evulator.SetMap('\n', "<br />\r\n");
+            //hr tagları otomatik kapatılacak.
+            evulator.SetAutoClosed("hr");
+
+            evulator.SetTag("hr", new BBCodeInfo("<hr />"));
             //Color, Font ile kapatılabilir.
             evulator.SetAlias("color", "font");
             //Size, Font ile kapatılabilir.
