@@ -35,6 +35,10 @@ namespace TextEngine_BBCode
             };
             var dict = this.GetDictionary(tag);
             currentInfo = this.bbCodeEvulator.GetTag(tag.ElemName);
+            if(currentInfo == null)
+            {
+                return result;
+            }
             if (currentInfo.CustomEvulator != null)
             {
                 customEvulatorHandler = Activator.CreateInstance(currentInfo.CustomEvulator) as BaseEvulator;
