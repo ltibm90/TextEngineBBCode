@@ -38,6 +38,7 @@ namespace TextEngine_BBCode
             if (currentInfo.CustomEvultor != null)
             {
                 customEvulatorHandler = Activator.CreateInstance(currentInfo.CustomEvultor) as BaseEvulator;
+                customEvulatorHandler.SetEvulator(this.Evulator);
                 result = customEvulatorHandler.Render(tag, vars);
 
             }
