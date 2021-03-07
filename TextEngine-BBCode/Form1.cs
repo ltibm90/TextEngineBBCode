@@ -28,7 +28,7 @@ namespace TextEngine_BBCode
 
 
             //Validator kullanarak aşağıdaki gibi içeriğe müdahele edebilirriz.
-            evulator.SetTag("url", new BBCodeInfo("<a href=\"{%TagAttrib}\">{%Text}</url>").SetValidator(
+            evulator.SetTag("url", new BBCodeInfo("<a href=\"{%TagAttrib}\">{%Text}</a>").SetValidator(
                 (validator, tag) =>
                 {
                     string attr = validator.TagData["TagAttrib"]?.ToString();
